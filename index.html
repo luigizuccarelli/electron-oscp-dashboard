@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>lmz-dev dashboard</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/notie.css" rel="stylesheet" />
+    <link href="css/local-style.css" rel="stylesheet" />
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <section id="container">
+      <div id="header">&nbsp;</div>
+      <aside>
+       <div tabindex="5000" style="overflow: hidden;" id="sidebar" class="nav-collapse">&nbsp;</div>
+      </aside>
+      <section id="main-content">
+        <section id="main-container" class="wrapper">
+        </section>
+      </section>
+    </section>
+
+    <script src="js/w3include.js"></script>
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/oscp-dashboard.js"></script>
+    <script>
+
+      // system libs
+      const exec = require('child_process').exec;
+      const config = require('./config.json');
+      const notie = require('./js/notie.js');
+      const fs = require('fs');
+      const bunyan = require('bunyan');
+      const log = bunyan.createLogger({name: "oscp-dashboard",stream: process.stdout,level: "debug"});
+
+      let charts = {};
+      let currentPage = 0;
+      let timer = null;
+      let timerList = [];
+      let testmode = false;
+
+      // setup chart metadata and options
+      const chartdata = {
+        labels: [
+          "cpu",
+          "mem"
+        ],
+       
+        datasets: [
+        {
+            data: [2, 2],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB"
+            ],
+            borderWidth: [
+              "0.5",
+              "0.5"
+            ],
+            borderColor: [
+              "#2f2f2f",
+              "#2f2f2f"
+            ]
+        }]
+      };
+
+      const optionsDonut = {
+        animation:{
+            animateScale:true,
+            animateRotate:true
+        },
+        cutoutPercentage: 75,
+        legend: {
+          display:true,
+          position: "bottom"
+        }
+      };
+
+      const options = {
+        scales: {
+            xAxes: [{
+                stacked: true
+            }],
+            yAxes: [{
+                stacked: true
+            }]
+        },
+        legend: {
+          display:false
+        }
+      }
+
+      // startup calls
+
+      includeHtml();
+      buildMenu();
+      log.info('Starting application oscp-dashboard');
+
+    </script>
+  
+</body>
+</html>

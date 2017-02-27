@@ -1,0 +1,24 @@
+{
+  "name": "lmz-dev-dashboard",
+  "version": "1.0.0",
+  "description": "Electron OSCP dashboard for development",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "lmz",
+    "dev",
+    "oscp",
+    "dashboard"
+  ],
+  "author": "LMZ",
+  "license": "TBD",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.5"
+  }
+}

@@ -1,0 +1,10 @@
+NAME:READY:STATUS
+fh-mbaas-1-qqsqn:1/1:Running
+fh-messaging-1-upgf0:1/1:Running
+fh-metrics-1-6iac6:1/1:Running
+fh-statsd-1-inkly:1/1:Running
+mongodb-1-1-agi1a:1/1:Running
+mongodb-2-1-2ubv1:1/1:Running
+mongodb-3-1-tij8g:1/1:Running
+mongodb-initiator:0/1:Completed
+nagios-1-36133:1/1:Running

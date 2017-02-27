@@ -1,0 +1,65 @@
+{
+  "servers": [
+    {
+      "name": "server1",
+      "nodes" : [
+        {
+          "name":"master",
+          "addr":"some-server-1.net"
+        },{
+          "name":"node1",
+          "addr":"some-server-2.net"
+        },{
+          "name":"node2",
+          "addr":"some-server-3.net"
+        },{
+          "name":"node3",
+          "addr":"some-server-4.net"
+        }
+      ],
+      "url": "https://openshift-master-1.net:8443",
+      "username": "abc",
+      "password": "xyz",
+      "sshuser": "ssh-user"
+    },
+    {
+      "name": "server2",
+      "nodes" : [
+        {
+          "name":"master",
+          "addr":"some-server-5.net"
+        },{
+          "name":"node1",
+          "addr":"some-server-6.net"
+        },{
+          "name":"node2",
+          "addr":"some-server-7.net"
+        },{
+          "name":"node3",
+          "addr":"some-server-8.net"
+        },{
+          "name":"mbaas1",
+          "addr":"some-server-9.net"
+        },{
+          "name":"mbaas2",
+          "addr":"some-server-10.net"
+        },{
+          "name":"mbaas3",
+          "addr":"some-server-11.net"
+        }
+      ],
+      "url": "https://openshift-master-2.net:8443",
+      "username": "abc",
+      "password": "xyz",
+      "sshuser": "ssh-userr"
+    },
+    {
+      "name": "server3",
+      "nodes" : [{"name":"master","addr":"xyz.com"}],
+      "url": "https://openshift-master-3.net:8443",
+      "username": "abc",
+      "password": "xyz",
+      "sshuser": "ssh-user"
+    }
+  ]
+}

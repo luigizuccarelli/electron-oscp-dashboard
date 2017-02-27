@@ -1,0 +1,14 @@
+NAME:READY:STATUS
+fh-aaa-4-awsc9:1/1:Running
+fh-appstore-4-ssqhu:1/1:Running
+fh-messaging-4-92wjs:1/1:Running
+fh-metrics-4-9q9m0:1/1:Running
+fh-ngui-6-hjoeb:1/1:Running
+fh-scm-4-74moh:1/1:Running
+fh-supercore-4-fclgk:1/1:Running
+gitlab-shell-3-yyetm:2/2:Running
+memcached-1-2d1is:1/1:Running
+millicore-7-e8sh0:3/3:Running
+mongodb-1-1-5o863:1/1:Running
+mysql-1-qcfvg:1/1:Running
+redis-1-eq9j5:1/1:Running

@@ -1,0 +1,17 @@
+NAME:READY:STATUS
+fh-mbaas-7-0ow20:1/1:Running
+fh-mbaas-7-jka3d:1/1:Running
+fh-mbaas-7-srft9:1/1:Running
+fh-messaging-4-1vpil:1/1:Running
+fh-messaging-4-4whpj:1/1:Running
+fh-messaging-4-dl2a5:1/1:Running
+fh-metrics-4-7g8f2:1/1:Running
+fh-metrics-4-wayiv:1/1:Running
+fh-metrics-4-wfe3t:1/1:Running
+fh-statsd-4-0u0el:1/1:Running
+mongodb-1-1-i8ug6:1/1:Running
+mongodb-2-1-cvmcs:1/1:Running
+mongodb-3-1-lqlu7:1/1:Running
+mongodb-initiator:0/1:Completed
+nagios-1-rtsqz:1/1:Running
+nginx-proxy-2-af8pu:1/1:Running
