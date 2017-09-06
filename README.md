@@ -1,11 +1,9 @@
-# oscp-dashboard
+# iot-dashboard
 
 ## An electron based front end application
 
-### Front end dashboard for dev openshift environments
+### Front end dashboard for dev iot channels
 
-* OC client must be installed
-* ssh access to all servers must be in place
 * update config.json to match your dev env
 
 ### Installation and launch

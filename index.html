@@ -2,7 +2,7 @@
 <html lang="en"> 
   <head>
     <meta charset="utf-8">
-    <title>lmz-dev dashboard</title>
+    <title>microlib-iot-dashboard</title>
 
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -13,6 +13,7 @@
     <link href="css/font-awesome.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
     <link href="css/notie.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <link href="css/local-style.css" rel="stylesheet" />
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
@@ -32,7 +33,7 @@
 
     <script src="js/w3include.js"></script>
     <script src="js/Chart.bundle.js"></script>
-    <script src="js/oscp-dashboard.js"></script>
+    <script src="js/iot-dashboard.js"></script>
     <script>
 
       // system libs
@@ -41,74 +42,52 @@
       const notie = require('./js/notie.js');
       const fs = require('fs');
       const bunyan = require('bunyan');
-      const log = bunyan.createLogger({name: "oscp-dashboard",stream: process.stdout,level: "debug"});
+      const log = bunyan.createLogger({name: "iot-dashboard",stream: process.stdout,level: "debug"});
 
       let charts = {};
       let currentPage = 0;
       let timer = null;
       let timerList = [];
       let testmode = false;
-
-      // setup chart metadata and options
-      const chartdata = {
-        labels: [
-          "cpu",
-          "mem"
-        ],
-       
-        datasets: [
-        {
-            data: [2, 2],
-            backgroundColor: [
-                "#FF6384",
-                "#36A2EB"
-            ],
-            hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB"
-            ],
-            borderWidth: [
-              "0.5",
-              "0.5"
-            ],
-            borderColor: [
-              "#2f2f2f",
-              "#2f2f2f"
-            ]
-        }]
-      };
-
-      const optionsDonut = {
-        animation:{
-            animateScale:true,
-            animateRotate:true
-        },
-        cutoutPercentage: 75,
-        legend: {
-          display:true,
-          position: "bottom"
-        }
-      };
-
-      const options = {
-        scales: {
-            xAxes: [{
-                stacked: true
-            }],
-            yAxes: [{
-                stacked: true
-            }]
-        },
-        legend: {
-          display:false
-        }
-      }
+      let canvas = [];
+      let iotvalues = [
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ],
+        [ 8,9,10,11,12,13,14,25,24,23,7,5 ]
+      ];
 
       // startup calls
+      
+      let iotdata = {
+        "channels" : [
+          {
+            "name": "vat-01",
+            "id": "1",
+            "values": [ 23,22,21,15,10,5,7,25,2,3,11,12 ]
+          }
+        ]
+      };
 
       includeHtml();
       buildMenu();
-      log.info('Starting application oscp-dashboard');
+      pageSelector(0,'overview');
+      buildBarGraphs(iotdata.channels[0],25);
+      log.info('Starting application iot-dashboard');
+      // set time interval to fetch cloud data
+      timer = setInterval(getCloudData,30000);
 
     </script>
   
