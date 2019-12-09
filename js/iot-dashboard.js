@@ -356,7 +356,7 @@ function buildOverview(id) {
     for (let board = 0 ; board < boards; board++) {
       let inputs = config.sites[id].boards[board].inputs.length;
       for (let x = 0; x < inputs; x++) {
-        sHtml += "<tr><td>" + config.sites[id].boards[board].inputs[x].name + "</td><td><span class=\"badge bg-info\">75&deg;</span></td><td><span class=\"badge bg-primary\">34&deg;</span></td><td><span id=\"update-" + count + "\" class=\"badge bg-important\">&nbsp;off&nbsp;</span></td>" +
+        sHtml += "<tr><td>" + config.sites[id].boards[board].inputs[x].name + "</td><td><span class=\"badge bg-info\">"+ config.sites[id].boards[board].inputs[x].lower_limit +"&deg;</span></td><td><span class=\"badge bg-primary\">"+ config.sites[id].boards[board].inputs[x].upper_limit +"&deg;</span></td><td><span id=\"update-" + count + "\" class=\"badge bg-important\">&nbsp;off&nbsp;</span></td>" +
                  "<td>" +
                  "<div id=\"work-progress5\">" +
                  "<canvas id=\"canvas-" + count + "\" style=\"display: inline-block; width: 120px; height: 25px; vertical-align: top;\" width=\"120\" height=\"25\" ></canvas>" +
