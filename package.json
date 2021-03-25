@@ -15,7 +15,7 @@
   "author": "LMZ",
   "license": "TBD",
   "devDependencies": {
-    "electron": "^1.8.8"
+    "electron": ">=9.4.0"
   },
   "dependencies": {
     "bunyan": "^1.8.5"
